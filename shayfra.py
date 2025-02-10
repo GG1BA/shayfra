@@ -4,7 +4,7 @@ abc = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
 numbers = "0123456789"
 symbols = "!?@#$%^&*()-_+=/|\\,.:;'\"<>"
 
-print("Shayfra beta 2. Input \"help\" and press \"Enter\" to display help-menu."
+print("Shayfra alpha 2. Input \"help\" and press \"Enter\" to display help-menu."
       "\n====================================================================")
 
 
