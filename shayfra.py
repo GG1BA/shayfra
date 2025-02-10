@@ -4,7 +4,7 @@ abc = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
 numbers = "0123456789"
 symbols = "!?@#$%^&*()-_+=/|\\,.:;'\"<>"
 
-print("Shayfra alpha 2. Input \"help\" and press \"Enter\" to display help-menu."
+print("Shayfra alpha 3. Input \"help\" and press \"Enter\" to display help-menu."
       "\n====================================================================")
 
 
@@ -64,12 +64,14 @@ def vernamDecrypt(key, code):
 while True:
     cmd = input("Enter the command: ")
     if cmd == "help":
-        print("passgen (x) - generates a hard password that contains letters, numbers and symbols."
+        print("encrypt - encodes the string using the key."
+              "\ndecrypt - decodes the code using the key."
+              "\npassgen (x) - generates a hard password that contains letters, numbers and symbols."
               "\nnumgen (x) - generates a code that contains the symbols only."
               "\nsymgen (x) - generates a string of the symbols."
               "\nabcgen (x) - generates a password that contains letters the only."
               "\nquit or q - closes Shayfra."
-              "\n===================================================================="
+              "\nWHERE:"
               "\n(x) - the length of the password.")
     elif cmd[0:7].lower() == "passgen":
         cmd = cmd.lower().split("passgen")
