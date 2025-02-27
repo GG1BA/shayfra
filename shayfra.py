@@ -4,7 +4,7 @@ abc = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
 numbers = "0123456789"
 symbols = "!?@#$%^&*()-_+=/|\\,.:;'\"<>"
 
-print("Shayfra alpha 3.1. Input \"help\" and press \"Enter\" to display help-menu."
+print("Shayfra alpha 4.0. Input \"help\" and press \"Enter\" to display help-menu."
       "\n====================================================================")
 
 
@@ -124,34 +124,44 @@ while True:
         while True:
             key = input("Enter the key: ")
             if key == "":
-                print("ERROR: the empty key.")
-                continue
+                break
             else:
                 while True:
                     word = input("Enter the string for encryption: ")
-                    if vernamEncrypt(key, word):
-                        print("Your code:", vernamEncrypt(key, word))
+                    try:
+                        if word == "":
+                            break
+                        elif vernamEncrypt(key, word):
+                            print("Your code:", vernamEncrypt(key, word))
+                            break
+                        else:
+                            print("ERROR: the length of the string must be equal to the length of the key.")
+                            continue
+                    except ValueError:
+                        print("ValueError: please, try \"encrypt\" command again.")
                         break
-                    else:
-                        print("ERROR: the length of the string must be equal to the length of the key.")
-                        continue
                 break
     elif cmd[0:7].lower() == "decrypt":
         while True:
             code = input("Enter the code for decryption: ")
             if code == "":
-                print("ERROR: the empty code.")
-                continue
+                break
             else:
                 code = code.split()
                 while True:
                     key = input("Enter the key: ")
-                    if vernamDecrypt(key, code):
-                        print("Your string:", vernamDecrypt(key, code))
+                    try:
+                        if key == "":
+                            break
+                        elif vernamDecrypt(key, code):
+                            print("Your string:", vernamDecrypt(key, code))
+                            break
+                        else:
+                            print("ERROR: the length of the code must be equal to the length of the key.")
+                            continue
+                    except ValueError:
+                        print("ValueError: please, try \"decrypt\" command again.")
                         break
-                    else:
-                        print("ERROR: the length of the code must be equal to the length of the key.")
-                        continue
                 break
     elif cmd == "q" or cmd == "quit":
         break
