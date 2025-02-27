@@ -4,7 +4,7 @@ abc = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
 numbers = "0123456789"
 symbols = "!?@#$%^&*()-_+=/|\\,.:;'\"<>"
 
-print("Shayfra alpha 3. Input \"help\" and press \"Enter\" to display help-menu."
+print("Shayfra alpha 3.1. Input \"help\" and press \"Enter\" to display help-menu."
       "\n====================================================================")
 
 
@@ -133,7 +133,7 @@ while True:
                         print("Your code:", vernamEncrypt(key, word))
                         break
                     else:
-                        print("ERROR: the length must be equal to the length of the key.")
+                        print("ERROR: the length of the string must be equal to the length of the key.")
                         continue
                 break
     elif cmd[0:7].lower() == "decrypt":
@@ -144,8 +144,8 @@ while True:
                 continue
             else:
                 code = code.split()
-                key = input("Enter the key: ")
                 while True:
+                    key = input("Enter the key: ")
                     if vernamDecrypt(key, code):
                         print("Your string:", vernamDecrypt(key, code))
                         break
