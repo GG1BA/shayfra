@@ -4,8 +4,8 @@ abc = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
 numbers = "0123456789"
 symbols = "!?@#$%^&*()-_+=/|\\,.:;'\"<>"
 
-print("Shayfra alpha 4.0. Input \"help\" and press \"Enter\" to display help-menu."
-      "\n====================================================================")
+print("Shayfra alpha 4.1. Input \"help\" and press \"Enter\" to display help-menu."
+      "\n=======================================================================================")
 
 
 def abcGen(x):
@@ -113,6 +113,7 @@ while True:
         cmd = cmd.lower().split("symgen")
         try:
             x = int(cmd[1])
+            print("Your password:", symGen(x))
         except ValueError:
             print("ERROR: enter the length."
                   "\nExamples:"
@@ -167,4 +168,4 @@ while True:
         break
     else:
         print("ERROR: invalid command. Enter \"help\" to display the commands.")
-    print("====================================================================")
+    print("=======================================================================================")
